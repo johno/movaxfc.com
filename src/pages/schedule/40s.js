@@ -2,9 +2,9 @@
 import { graphql } from 'gatsby'
 import { jsx, Styled } from 'theme-ui'
 
-import Layout from '../components/layout'
-import MatchCard from '../components/match-card'
-import { isUpcoming, isComplete } from '../util'
+import Layout from '../../components/layout'
+import MatchCard from '../../components/match-card'
+import { isUpcoming, isComplete } from '../../util'
 
 export default ({
   data: {
@@ -21,7 +21,7 @@ export default ({
           mb: [3, 4, 5]
         }}
       >
-        Schedule
+        40s Schedule
       </Styled.h1>
       {upcoming.map(game => (
         <MatchCard {...game} />
@@ -51,7 +51,7 @@ export default ({
 export const pageQuery = graphql`
   {
     games: allAirtable(
-      filter: { table: { ne: "location" } },
+      filter: { table: { eq: "40s" } },
       sort: { order: ASC, fields: data___date }) {
       nodes {
         table
