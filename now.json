@@ -2,5 +2,10 @@
   "alias": [
     "www.movaxfc.com",
     "movaxfc.com"
-  ]
+  ],
+  "build": {
+    "env": {
+      "AIRTABLE_API_KEY": "@airtable_api_key"
+    }
+  }
 }

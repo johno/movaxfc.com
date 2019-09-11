@@ -4,22 +4,15 @@ import { jsx, Styled } from 'theme-ui'
 
 import Layout from '../components/layout'
 import MatchCard from '../components/match-card'
-import { isUpcoming } from '../util'
+import { isUpcoming, isComplete } from '../util'
 
 export default ({
   data: {
-    teamD1: { nodes: teamD1 },
-    team30: { nodes: team30 },
-    team40: { nodes: team40 }
+    games: { nodes: games }
   }
 }) => {
-  const upcomingD1 = teamD1.filter(isUpcoming)
-  const upcoming30 = team30.filter(isUpcoming)
-  const upcoming40 = team40.filter(isUpcoming)
-
-  const nextD1 = upcomingD1[0]
-  const next30 = upcoming30[0]
-  const next40 = upcoming40[0]
+  const upcoming = games.filter(isUpcoming)
+  const past = games.filter(isComplete)
 
   return (
     <Layout>
@@ -28,19 +21,37 @@ export default ({
           mb: [3, 4, 5]
         }}
       >
-        Upcoming games
+        Schedule
       </Styled.h1>
-      <MatchCard {...nextD1} />
-      <MatchCard {...next30} />
-      <MatchCard {...next40} />
+      {upcoming.map(game => (
+        <MatchCard {...game} />
+      ))}
+
+      <div sx={{
+        mt: [3, 4, 5],
+        mx: [-3, -4, -5],
+        px: [3, 4, 5],
+        pt: [3, 4, 5],
+        pb: [2, 3, 3],
+        opacity: .75,
+        backgroundColor: 'muted'
+        }}
+      >
+        <Styled.h3 sx={{ m: 0 }}>
+          Past games
+        </Styled.h3>
+        {past.map(game => (
+          <MatchCard {...game} />
+        ))}
+      </div>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
   {
-    teamD1: allAirtable(
-      filter: { table: { eq: "d1" } },
+    games: allAirtable(
+      filter: { table: { ne: "location" } },
       sort: { order: ASC, fields: data___date }) {
       nodes {
         table

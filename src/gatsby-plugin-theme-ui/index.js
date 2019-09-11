@@ -42,16 +42,6 @@ export default {
     "secondary": "#c0c",
     "highlight": "#e0e",
     "muted": "#f6f6ff",
-    "modes": {
-      "dark": {
-        "text": "#fff",
-        "background": "#000",
-        "primary": "#0fc",
-        "secondary": "#0cf",
-        "highlight": "#f0c",
-        "muted": "#011"
-      }
-    }
   },
   "styles": {
     "root": {
@@ -78,7 +68,10 @@ export default {
       "fontFamily": "heading",
       "lineHeight": "1.2",
       "fontWeight": "heading",
-      "fontSize": 3
+      "fontSize": 3,
+      "a": {
+        "color": "black"
+      }
     },
     "h4": {
       "color": "text",
