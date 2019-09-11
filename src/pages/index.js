@@ -1,19 +1,9 @@
-import React from 'react'
+/** @jsx jsx */
 import { graphql } from 'gatsby'
+import { jsx, Styled } from 'theme-ui'
 
-const MatchCard = ({ data, table }) => (
-  <div>
-    <h3>{table}</h3>
-    <p>{data.date}</p>
-    <p>
-      {data.location[0].data.name}
-      {data.field ? (
-        '#' + data.field
-      ) : null}
-    </p>
-    <p>Against {data.team}</p>
-  </div>
-)
+import Layout from '../components/layout'
+import MatchCard from '../components/match-card'
 
 const isUpcoming = game => {
   const timeNow = new Date()
@@ -39,11 +29,18 @@ export default ({
   const next40 = upcoming40[0]
 
   return (
-    <div>
+    <Layout>
+      <Styled.h1
+        sx={{
+          mb: [3, 4, 5]
+        }}
+      >
+        Upcoming games
+      </Styled.h1>
       <MatchCard {...nextD1} />
       <MatchCard {...next30} />
       <MatchCard {...next40} />
-    </div>
+    </Layout>
   )
 }
 

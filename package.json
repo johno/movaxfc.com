@@ -8,11 +8,17 @@
     "develop": "gatsby develop"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.17",
+    "@mdx-js/mdx": "^1.4.5",
+    "@mdx-js/react": "^1.4.5",
     "dotenv": "^8.1.0",
     "gatsby": "^2.15.14",
+    "gatsby-plugin-mdx": "^1.0.41",
+    "gatsby-plugin-theme-ui": "^0.2.41",
     "gatsby-source-airtable": "^2.0.9",
     "gatsby-source-filesystem": "^2.1.22",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "theme-ui": "^0.2.41"
   }
 }
