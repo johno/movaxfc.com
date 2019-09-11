@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "movaxfc",
+  "scripts": {
+    "start": "yarn develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop"
+  },
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "gatsby": "^2.15.14",
+    "gatsby-source-airtable": "^2.0.9",
+    "gatsby-source-filesystem": "^2.1.22",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  }
+}
