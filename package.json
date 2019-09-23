@@ -5,7 +5,8 @@
     "start": "yarn develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop"
+    "develop": "gatsby develop",
+    "deploy": "now switch johno && now && now alias $(pbpaste) www.movaxfc.com && now alias $(pbpaste) movaxfc.com"
   },
   "dependencies": {
     "@emotion/core": "^10.0.17",
