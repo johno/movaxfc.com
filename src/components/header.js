@@ -17,7 +17,10 @@ export default () => (
       <Link to='/' title='Home'>
         <img
           alt='Movax FC logo'
-          src='https://contrast.now.sh/white/black?size=48&fontSize=2&baseline=2&radius=32&text=⚽️'
+          src='https://user-images.githubusercontent.com/1424573/65458220-5f372700-de0a-11e9-9c70-e4c2054645a8.png'
+          sx={{
+            height: 250
+          }}
         />
         <span
           sx={{
